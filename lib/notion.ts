@@ -53,7 +53,6 @@ export async function addToNotion(data: any) {
       ]
     : [],
 },
-      },
       Overview: {
         rich_text: [
           {
