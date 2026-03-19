@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState, type ReactNode } from "react";
 
 type StatusType = "PLAN" | "WATCHING" | "WATCHED";
 type ViewMode = "gallery" | "list";
@@ -105,7 +105,7 @@ function ControlButton({
   onClick,
 }: {
   active?: boolean;
-  children: React.ReactNode;
+  children: ReactNode;
   onClick: () => void;
 }) {
   return (
