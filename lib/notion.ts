@@ -99,3 +99,17 @@ export async function addToNotion(data: any) {
 
   return created;
 }
+
+export async function getArchivedItems() {
+  const response = await notion.databases.query({
+    database_id: process.env.NOTION_DATABASE_ID!,
+    sorts: [
+      {
+        property: "Archived At",
+        direction: "descending",
+      },
+    ],
+  });
+
+  return response.results;
+}
