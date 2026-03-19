@@ -40,7 +40,19 @@ export async function addToNotion(data: any) {
       Rating: {
         number: Number(data.rating) || 0,
       },
-      
+      Poster: {
+  files: data.poster
+    ? [
+        {
+          name: `${data.title || "poster"} poster`,
+          external: {
+            url: data.poster,
+          },
+          type: "external",
+        },
+      ]
+    : [],
+},
       Overview: {
         rich_text: [
           {
