@@ -74,7 +74,7 @@ export async function addToNotion(data: any) {
 }
 
 export async function getArchivedItems() {
-  const response = await notion.databases.query({
+  const response = await (notion.databases as any).query({
     database_id: process.env.NOTION_DATABASE_ID!,
     page_size: 100,
   });
