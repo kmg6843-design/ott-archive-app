@@ -41,18 +41,17 @@ export async function addToNotion(data: any) {
         number: Number(data.rating) || 0,
       },
       Poster: {
-  files: data.poster
-    ? [
-        {
-          name: `${data.title || "poster"} poster`,
-          external: {
-            url: data.poster,
-          },
-          type: "external",
-        },
-      ]
-    : [],
-},
+        files: data.poster
+          ? [
+              {
+                name: `${data.title || "제목 없음"} Poster`,
+                external: {
+                  url: data.poster,
+                },
+              },
+            ]
+          : [],
+      },
       Overview: {
         rich_text: [
           {
